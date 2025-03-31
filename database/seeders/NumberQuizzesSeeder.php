@@ -2,12 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Media;
 use App\Models\Quiz;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Seeder;
 
 class NumberQuizzesSeeder extends Seeder
 {
@@ -19,7 +17,7 @@ class NumberQuizzesSeeder extends Seeder
         // Create Numbers category
         $category = Category::create([
             'name' => 'Nombres et Chiffres',
-            'description' => 'Apprendre les nombres et leurs couleurs'
+            'description' => 'Apprendre les nombres et leurs couleurs',
         ]);
 
         // Add media for numbers with their associated quizzes
@@ -31,14 +29,14 @@ class NumberQuizzesSeeder extends Seeder
                     [
                         'question' => 'Quelle est la couleur du numéro?',
                         'options' => ['Rouge', 'Bleu', 'Vert', 'Jaune'],
-                        'correct_option' => 0
+                        'correct_option' => 0,
                     ],
                     [
                         'question' => 'Quel est ce numéro?',
                         'options' => ['Deux', 'Un', 'Trois', 'Quatre'],
-                        'correct_option' => 1
-                    ]
-                ]
+                        'correct_option' => 1,
+                    ],
+                ],
             ],
             [
                 'file' => 'Screenshot 2025-03-31 140104.png',
@@ -47,14 +45,14 @@ class NumberQuizzesSeeder extends Seeder
                     [
                         'question' => 'Quelle est la couleur du numéro?',
                         'options' => ['Rouge', 'Bleu', 'Vert', 'Jaune'],
-                        'correct_option' => 1
+                        'correct_option' => 1,
                     ],
                     [
                         'question' => 'Quel est ce numéro?',
                         'options' => ['Un', 'Trois', 'Deux', 'Quatre'],
-                        'correct_option' => 2
-                    ]
-                ]
+                        'correct_option' => 2,
+                    ],
+                ],
             ],
             [
                 'file' => 'Screenshot 2025-03-31 140108.png',
@@ -63,14 +61,14 @@ class NumberQuizzesSeeder extends Seeder
                     [
                         'question' => 'Quelle est la couleur du numéro?',
                         'options' => ['Rouge', 'Bleu', 'Vert', 'Jaune'],
-                        'correct_option' => 2
+                        'correct_option' => 2,
                     ],
                     [
                         'question' => 'Quel est ce numéro?',
                         'options' => ['Quatre', 'Deux', 'Un', 'Trois'],
-                        'correct_option' => 3
-                    ]
-                ]
+                        'correct_option' => 3,
+                    ],
+                ],
             ],
             [
                 'file' => 'Screenshot 2025-03-31 140110.png',
@@ -79,14 +77,14 @@ class NumberQuizzesSeeder extends Seeder
                     [
                         'question' => 'Quelle est la couleur du numéro?',
                         'options' => ['Rouge', 'Bleu', 'Vert', 'Jaune'],
-                        'correct_option' => 3
+                        'correct_option' => 3,
                     ],
                     [
                         'question' => 'Quel est ce numéro?',
                         'options' => ['Trois', 'Quatre', 'Cinq', 'Deux'],
-                        'correct_option' => 1
-                    ]
-                ]
+                        'correct_option' => 1,
+                    ],
+                ],
             ],
             [
                 'file' => 'Screenshot 2025-03-31 140114.png',
@@ -95,15 +93,15 @@ class NumberQuizzesSeeder extends Seeder
                     [
                         'question' => 'Quelle est la couleur du numéro?',
                         'options' => ['Rouge', 'Orange', 'Vert', 'Jaune'],
-                        'correct_option' => 1
+                        'correct_option' => 1,
                     ],
                     [
                         'question' => 'Quel est ce numéro?',
                         'options' => ['Quatre', 'Trois', 'Cinq', 'Six'],
-                        'correct_option' => 2
-                    ]
-                ]
-            ]
+                        'correct_option' => 2,
+                    ],
+                ],
+            ],
         ];
 
         foreach ($numbers as $number) {
@@ -111,8 +109,8 @@ class NumberQuizzesSeeder extends Seeder
             $media = Media::create([
                 'category_id' => $category->id,
                 'type' => 'image',
-                'file_path' => 'sample/' . $number['file'],
-                'description' => $number['description']
+                'file_path' => 'sample/'.$number['file'],
+                'description' => $number['description'],
             ]);
 
             // Create associated quizzes
@@ -121,7 +119,7 @@ class NumberQuizzesSeeder extends Seeder
                     'category_id' => $category->id,
                     'question' => $quiz['question'],
                     'options' => json_encode($quiz['options']),
-                    'correct_option' => $quiz['correct_option']
+                    'correct_option' => $quiz['correct_option'],
                 ]);
             }
         }

@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Media;
+use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
@@ -17,37 +16,37 @@ class CategorySeeder extends Seeder
         // Create Images category
         $imagesCategory = Category::create([
             'name' => 'Images',
-            'description' => 'A collection of sample images'
+            'description' => 'A collection of sample images',
         ]);
 
         Media::create([
             'category_id' => $imagesCategory->id,
             'type' => 'image',
-            'file_path' => 'sample/image1.jpg'
+            'file_path' => 'sample/image1.jpg',
         ]);
 
         // Create Videos category
         $videosCategory = Category::create([
             'name' => 'Videos',
-            'description' => 'A collection of sample videos'
+            'description' => 'A collection of sample videos',
         ]);
 
         Media::create([
             'category_id' => $videosCategory->id,
             'type' => 'video',
-            'file_path' => 'sample/video1.mp4'
+            'file_path' => 'sample/video1.mp4',
         ]);
 
         // Create Audio category
         $audioCategory = Category::create([
             'name' => 'Audio',
-            'description' => 'A collection of sample audio files'
+            'description' => 'A collection of sample audio files',
         ]);
 
         Media::create([
             'category_id' => $audioCategory->id,
             'type' => 'audio',
-            'file_path' => 'sample/audio1.mp3'
+            'file_path' => 'sample/audio1.mp3',
         ]);
     }
 }

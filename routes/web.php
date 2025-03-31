@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MediaController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 Route::get('/', function () {
     return view('accueil');
@@ -42,12 +41,12 @@ Route::resource('media', MediaController::class);
 // Admin routes
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
-    
+
     // Category management
     Route::post('/categories', [AdminController::class, 'storeCategory'])->name('categories.store');
     Route::put('/categories/{category}', [AdminController::class, 'updateCategory'])->name('categories.update');
     Route::delete('/categories/{category}', [AdminController::class, 'destroyCategory'])->name('categories.destroy');
-    
+
     // Media management
     Route::post('/media', [AdminController::class, 'storeMedia'])->name('media.store');
     Route::delete('/media/{media}', [AdminController::class, 'destroyMedia'])->name('media.destroy');
