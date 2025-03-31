@@ -3,21 +3,19 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build && cp -r public/* .vercel/output/static/",
-        "vercel-build": "npm run build"
+        "build": "vite build",
+        "vercel-build": "npm ci && npm run build"
     },
     "dependencies": {
-        "@tailwindcss/vite": "^4.0.7",
-        "autoprefixer": "^10.4.20",
-        "axios": "^1.7.4",
-        "concurrently": "^9.0.1",
-        "laravel-vite-plugin": "^1.0",
-        "tailwindcss": "^4.0.7",
-        "vite": "^6.0"
+        "@tailwindcss/forms": "^0.5.7",
+        "autoprefixer": "^10.4.17",
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.4.33",
+        "tailwindcss": "^3.4.1",
+        "vite": "^5.0.0"
     },
-    "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "4.9.5",
-        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
-        "lightningcss-linux-x64-gnu": "^1.29.1"
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.10"
     }
 }

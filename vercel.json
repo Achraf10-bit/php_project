@@ -6,7 +6,24 @@
             "runtime": "vercel-php@0.6.0"
         }
     },
+    "outputDirectory": "public",
     "routes": [
+        {
+            "src": "/build/assets/(.*)",
+            "dest": "/build/assets/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/robots.txt",
+            "dest": "/robots.txt"
+        },
+        {
+            "src": "/storage/(.*)",
+            "dest": "/storage/$1"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
@@ -23,6 +40,7 @@
         }
     ],
     "env": {
+        "APP_NAME": "Laravel",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://php-project-learning-games.vercel.app",
@@ -36,6 +54,7 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
         "SSR_TEMP_PATH": "/tmp/ssr",
-        "NODE_PATH": "node"
+        "NODE_PATH": "node",
+        "APP_KEY": "base64:xWxULaYCXGlUhxSF1QbYKWBxh3CQo4dK5mhFKeqkCaM="
     }
 } 
