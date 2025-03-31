@@ -2,49 +2,26 @@
     "version": 2,
     "framework": null,
     "outputDirectory": "public",
-    "headers": [
+    "rewrites": [
+        {
+            "source": "/build/assets/(.*)",
+            "destination": "/build/assets/$1"
+        },
+        {
+            "source": "/favicon.ico",
+            "destination": "/favicon.ico"
+        },
+        {
+            "source": "/robots.txt",
+            "destination": "/robots.txt"
+        },
+        {
+            "source": "/storage/(.*)",
+            "destination": "/storage/$1"
+        },
         {
             "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Content-Security-Policy",
-                    "value": "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:;"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "DENY"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                }
-            ]
-        }
-    ],
-    "routes": [
-        {
-            "src": "/build/assets/(.*)",
-            "dest": "/build/assets/$1"
-        },
-        {
-            "src": "/favicon.ico",
-            "dest": "/favicon.ico"
-        },
-        {
-            "src": "/robots.txt",
-            "dest": "/robots.txt"
-        },
-        {
-            "src": "/storage/(.*)",
-            "dest": "/storage/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
+            "destination": "/api/index.php"
         }
     ],
     "builds": [
