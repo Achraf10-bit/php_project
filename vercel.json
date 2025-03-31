@@ -1,55 +1,21 @@
 {
     "version": 2,
-    "framework": null,
-    "outputDirectory": "public",
-    "rewrites": [
-        {
-            "source": "/build/assets/(.*)",
-            "destination": "/build/assets/$1"
-        },
-        {
-            "source": "/favicon.ico",
-            "destination": "/favicon.ico"
-        },
-        {
-            "source": "/robots.txt",
-            "destination": "/robots.txt"
-        },
-        {
-            "source": "/storage/(.*)",
-            "destination": "/storage/$1"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/api/index.php"
+    "functions": {
+        "api/*.php": {
+            "runtime": "vercel-php@0.6.0"
         }
-    ],
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.0"
-        },
-        {
-            "src": "public/**",
-            "use": "@vercel/static"
-        }
+    },
+    "routes": [
+        { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
         "APP_NAME": "Laravel",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://php-project-learning-games.vercel.app",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
+        "APP_KEY": "base64:xWxULaYCXGlUhxSF1QbYKWBxh3CQo4dK5mhFKeqkCaM=",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "SSR_TEMP_PATH": "/tmp/ssr",
-        "NODE_PATH": "node",
-        "APP_KEY": "base64:xWxULaYCXGlUhxSF1QbYKWBxh3CQo4dK5mhFKeqkCaM="
+        "SESSION_DRIVER": "array"
     }
 } 
