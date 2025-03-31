@@ -2,8 +2,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "build": "vite build && cp -r public/* .vercel/output/static/",
+        "vercel-build": "npm run build"
     },
     "dependencies": {
         "@tailwindcss/vite": "^4.0.7",
