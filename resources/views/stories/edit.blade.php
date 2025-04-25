@@ -12,7 +12,7 @@
             background-color: #f0f9ff;
             color: #333;
         }
-        .container {
+        .main {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
@@ -28,14 +28,14 @@
             color: #ff4081;
             margin: 0;
         }
-        .edit-form {
+        .edit {
             background-color: white;
             padding: 20px;
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .form-group {
+        .gr {
             margin-bottom: 15px;
         }
         label {
@@ -68,54 +68,54 @@
         .btn:hover {
             background-color: #45a049;
         }
-        .btn-secondary {
+        .btn2 {
             background-color: #ff4081;
         }
-        .btn-secondary:hover {
+        .btn2:hover {
             background-color: #f50057;
         }
-        .back-link {
+        .link_b {
             display: inline-block;
             margin-bottom: 20px;
             color: #666;
             text-decoration: none;
         }
-        .back-link:hover {
+        .link_b:hover {
             color: #ff4081;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="{{ route('stories.index') }}" class="back-link">← Retour à la liste</a>
+    <div class="main">
+        <a href="{{ route('stories.index') }}" class="link_b">← Retour à la liste</a>
         
         <div class="header">
             <h1>Modifier l'Histoire</h1>
         </div>
 
-        <div class="edit-form">
+        <div class="edit">
             <form action="{{ route('stories.update', $story->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 
-                <div class="form-group">
+                <div class="gr">
                     <label for="title">Titre</label>
                     <input type="text" id="title" name="title" value="{{ $story->title }}" required>
                 </div>
 
-                <div class="form-group">
+                <div class="gr">
                     <label for="content">Contenu</label>
                     <textarea id="content" name="content" required>{{ $story->content }}</textarea>
                 </div>
 
-                <div class="form-group">
+                <div class="gr">
                     <label for="image_url">URL de l'image (optionnel)</label>
                     <input type="text" id="image_url" name="image_url" value="{{ $story->image_url }}">
                 </div>
 
-                <div class="form-group">
+                <div class="gr">
                     <button type="submit" class="btn">Enregistrer les modifications</button>
-                    <a href="{{ route('stories.index') }}" class="btn btn-secondary">Annuler</a>
+                    <a href="{{ route('stories.index') }}" class="btn btn2">Annuler</a>
                 </div>
             </form>
         </div>

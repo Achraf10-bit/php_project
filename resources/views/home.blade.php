@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" contenus="width=device-width, initial-scale=1.0">
     <title>Monde Amusant des Enfants</title>
     <style>
         body {
@@ -43,31 +43,31 @@
             margin: 20px 0;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .title {
+        .titre2 {
             color: #4caf50;
             font-size: 2em;
             margin-bottom: 20px;
         }
-        .content {
+        .contenus {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
-        .card {
+        .carte {
             background-color: #fff9c4;
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-        .card:hover {
+        .carte:hover {
             transform: scale(1.05);
         }
-        .card h3 {
+        .carte h3 {
             color: #ff9800;
             margin-bottom: 10px;
         }
-        .card p {
+        .carte p {
             color: #666;
             font-size: 1.1em;
         }
@@ -81,14 +81,14 @@
         </div>
 
         <div class="section">
-            <h2 class="title">🎮 Activités Amusantes</h2>
-            <div class="content">
-                <div class="card">
+            <h2 class="titre2">🎮 Activités Amusantes</h2>
+            <div class="contenus">
+                <div class="carte">
                     <h3>📚 Histoires</h3>
                     <p>Lisez des histoires passionnantes!</p>
                     <a href="{{ route('stories.index') }}" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Voir les histoires →</a>
                 </div>
-                <div class="card">
+                <div class="carte">
                     <h3>🦊Carte d'animaux</h3>
                     <p>Decouvrez les animaux de la planète</p>
                     <a href="" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Voir les animaux →</a>
@@ -98,16 +98,16 @@
         </div>
 
         <div class="section">
-            <h2 class="title">🎯 Jeux Éducatifs</h2>
-            <div class="content">
-                <div class="card">
+            <h2 class="titre2">🎯 Jeux Éducatifs</h2>
+            <div class="contenus">
+                <div class="carte">
                     <h3>🔢 Jeux de Maths</h3>
-                    <p>Apprenez les nombres en vous amusant!</p>
+                    <p>Apprenez les nombres en vous amusant!!!</p>
                     <a href="" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Jouer aux maths →</a>
                 </div>
-                <div class="card">
+                <div class="carte">
                     <h3>🔤 Jeux de l'Alphabet</h3>
-                    <p>Apprenez l'alphabet en vous amusant!</p>
+                    <p>Apprenez l'alphabet en vous amusant!!!</p>
                     <a href="" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Jouer à l'alphabet →</a>
                 </div>
             </div>
