@@ -85,8 +85,8 @@
             <div class="contenus">
                 <div class="carte">
                     <h3>📚 Histoires</h3>
-                    <p>Lisez des histoires passionnantes!</p>
-                    <a href="{{ route('stories.index') }}" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Voir les histoires →</a>
+                    <p>Ecrire votre histoires!</p>
+                    <a href="{{ route('stories.index') }}" style="display: inline-block; margin-top: 10px; color: #ff4081; text-decoration: none;">Ecrire les histoires →</a>
                 </div>
                 <div class="carte">
                     <h3>🦊Carte d'animaux</h3>
